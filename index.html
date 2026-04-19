@@ -15,21 +15,47 @@ body {
 /* Top Bar */
 .topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #181b22;
   padding: 10px 20px;
 }
 
-/* Left section */
-.left {
+/* Left menu */
+.menu {
   display: flex;
+  gap: 22px;
   align-items: center;
-  gap: 20px;
 }
 
-/* Logo */
+/* ALL menu items same size */
+.menu div {
+  font-size: 15px;
+  cursor: pointer;
+  color: #bbb;
+}
+
+.menu div:hover {
+  color: white;
+}
+
+/* NC button same size style */
+.nc-btn {
+  font-size: 15px;
+  cursor: pointer;
+  color: #00d4ff;
+  font-weight: bold;
+}
+
+.nc-btn:hover {
+  color: #66e6ff;
+}
+
+/* CENTER LOGO */
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -37,36 +63,6 @@ body {
 
 .logo:hover {
   color: #00d4ff;
-}
-
-/* Menu (TEXT ONLY STYLE) */
-.menu {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-}
-
-.menu div {
-  cursor: pointer;
-  color: #bbb;
-  font-size: 14px;
-  background: none; /* important */
-  padding: 0;       /* important */
-}
-
-.menu div:hover {
-  color: white;
-}
-
-/* NovaCoins button */
-.nc-btn {
-  color: #00d4ff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.nc-btn:hover {
-  color: #66e6ff;
 }
 
 /* Right balance */
@@ -147,25 +143,27 @@ body {
 <!-- Top Bar -->
 <div class="topbar">
 
-  <div class="left">
-    <div class="logo" onclick="goHome()">🚀 NovaPlay</div>
-
-    <div class="menu">
-      <div>Charts</div>
-      <div>Marketplace</div>
-      <div>Create</div>
-      <div class="nc-btn">NovaCoins</div>
-    </div>
+  <!-- LEFT MENU -->
+  <div class="menu">
+    <div>Charts</div>
+    <div>Marketplace</div>
+    <div>Create</div>
+    <div class="nc-btn">NC (CMCN)</div>
   </div>
 
+  <!-- CENTER LOGO -->
+  <div class="logo" onclick="goHome()">🚀 NovaPlay</div>
+
+  <!-- RIGHT -->
   <div class="balance">⍟ 1,250</div>
 
 </div>
 
-<!-- Content -->
+<!-- CONTENT -->
 <div class="container">
 
   <div class="section-title">🔥 Popular Games</div>
+
   <div class="games">
     <div class="card"><div class="thumb"></div><div class="title">Tower Rush</div></div>
     <div class="card"><div class="thumb"></div><div class="title">Block Survival</div></div>
@@ -174,6 +172,7 @@ body {
   </div>
 
   <div class="section-title">🛒 Marketplace</div>
+
   <div class="market">
     <div class="item">
       <div class="thumb"></div>
@@ -198,14 +197,8 @@ body {
 
 <script>
 document.querySelectorAll(".card").forEach(card => {
-  card.onclick = () => {
-    alert("Launching game...");
-  };
+  card.onclick = () => alert("Launching game...");
 });
-
-document.querySelector(".nc-btn").onclick = () => {
-  alert("Buy more NovaCoins!");
-};
 
 function goHome() {
   location.reload();
