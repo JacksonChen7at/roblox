@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+body{
+ background:black;
+ height:100vh;
+ overflow:hidden;
+ color:white;
+}
+
+/* TOPBAR */
+.topbar{
+ position:absolute;
+ top:0;
+ width:100%;
+ height:60px;
+ background:#111318;
+ display:flex;
+ align-items:center;
+ padding:0 20px;
+}
+.logo{width:30px;height:30px;background:white;transform:rotate(20deg);}
+.menu{margin-left:20px;display:flex;gap:25px;color:#ccc;}
+
+.search-wrap{flex:1;display:flex;justify-content:center;}
+.search{
+ width:400px;
+ padding:8px;
+ border-radius:20px;
+ border:none;
+ background:#2a2d36;
+ color:white;
+}
+
+.signup{
+ background:#3b5cff;
+ border:none;
+ padding:8px 14px;
+ border-radius:8px;
+ color:white;
+}
+
+/* BACKGROUND */
+.bg{
+ position:absolute;
+ width:100%;
+ height:100%;
+}
+.tile{
+ position:absolute;
+ width:160px;
+ height:160px;
+ background:#00ff88;
+ border-radius:15px;
+ transform:rotate(15deg);
+}
+.tile:nth-child(1){top:120px;left:100px;}
+.tile:nth-child(2){top:300px;left:250px;}
+.tile:nth-child(3){top:200px;right:200px;}
+.tile:nth-child(4){bottom:150px;right:100px;}
+
+.overlay{
+ position:absolute;
+ width:100%;
+ height:100%;
+ background:rgba(0,0,0,0.6);
+}
+
+/* LOGIN BOX */
+.login{
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ width:360px;
+ background:#2a2d36;
+ padding:30px;
+ border-radius:10px;
+ text-align:center;
+}
+
+.input{
+ width:100%;
+ padding:10px;
+ margin-bottom:10px;
+ border-radius:8px;
+ border:none;
+ background:#3a3d46;
+ color:white;
+}
+
+.btn{
+ width:100%;
+ padding:10px;
+ margin-bottom:10px;
+ border-radius:8px;
+ border:none;
+ background:#3a3d46;
+ color:white;
+}
+
+.login-btn{
+ border:1px solid #777;
+ background:transparent;
+}
+
+.small{font-size:14px;color:#ccc;}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+ <div class="logo"></div>
+
+ <div class="menu">
+  <div>Charts</div>
+  <div>Marketplace</div>
+  <div>Create</div>
+  <div>Robux</div>
+ </div>
+
+ <div class="search-wrap">
+  <input class="search" placeholder="Search">
+ </div>
+
+ <button class="signup">Sign Up</button>
+</div>
+
+<div class="bg">
+ <div class="tile"></div>
+ <div class="tile"></div>
+ <div class="tile"></div>
+ <div class="tile"></div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="login">
+ <h2>Login to Roblox</h2>
+
+ <input class="input" placeholder="Username/Email/Phone">
+ <input class="input" placeholder="Password">
+
+ <button class="btn login-btn">Log In</button>
+
+ <div class="small">Forgot Password or Username?</div>
+
+ <hr style="margin:15px 0;border:1px solid #444;">
+
+ <button class="btn">Email Me a One-Time Code</button>
+ <button class="btn">Quick Sign-in</button>
+
+ <div class="small">Don't have an account? Sign Up</div>
+</div>
+
+</body>
+</html>
