@@ -15,24 +15,35 @@ body {
 /* Top Bar */
 .topbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background: #181b22;
   padding: 10px 20px;
-  gap: 25px;
 }
 
-/* Logo */
+/* Left side */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Clickable logo */
 .logo {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: #00d4ff;
 }
 
 /* Menu */
 .menu {
   display: flex;
   gap: 20px;
-  align-items: center;
 }
 
 .menu div {
@@ -45,12 +56,25 @@ body {
   color: white;
 }
 
-/* Currency */
-.currency {
+/* NovaCoins button */
+.nc-btn {
   background: #222733;
   padding: 6px 12px;
   border-radius: 8px;
+  cursor: pointer;
   color: #00d4ff;
+  font-weight: bold;
+}
+
+.nc-btn:hover {
+  background: #2a3140;
+}
+
+/* Right side balance */
+.balance {
+  background: #222733;
+  padding: 6px 12px;
+  border-radius: 8px;
   font-weight: bold;
 }
 
@@ -123,18 +147,24 @@ body {
 
 <!-- Top -->
 <div class="topbar">
-  <div class="logo">🚀 NovaPlay</div>
+  
+  <div class="left">
+    <div class="logo" onclick="goHome()">🚀 NovaPlay</div>
 
-  <div class="menu">
-    <div>Charts</div>
-    <div>Marketplace</div>
-    <div>Create</div>
-    <div class="currency">⍟ 1,250 NovaCoins</div>
+    <div class="menu">
+      <div>Charts</div>
+      <div>Marketplace</div>
+      <div>Create</div>
+      <div class="nc-btn">NovaCoins</div>
+    </div>
   </div>
+
+  <div class="balance">⍟ 1,250</div>
+
 </div>
 
 <!-- Content -->
-<div class="container">
+<div class="container" id="mainPage">
 
   <div class="section-title">🔥 Popular Games</div>
   <div class="games">
@@ -168,11 +198,22 @@ body {
 </div>
 
 <script>
+// Game click
 document.querySelectorAll(".card").forEach(card => {
   card.onclick = () => {
     alert("Launching game...");
   };
 });
+
+// NovaCoins button
+document.querySelector(".nc-btn").onclick = () => {
+  alert("Buy more NovaCoins!");
+};
+
+// Go back to main page
+function goHome() {
+  location.reload(); // simple reset to homepage
+}
 </script>
 
 </body>
