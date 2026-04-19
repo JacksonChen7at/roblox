@@ -15,10 +15,17 @@ body {
 /* Top Bar */
 .topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #181b22;
   padding: 10px 20px;
+}
+
+/* Left section */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .logo {
@@ -26,6 +33,13 @@ body {
   font-weight: bold;
 }
 
+.currency {
+  background: #222733;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Menu */
 .menu {
   display: flex;
   gap: 20px;
@@ -38,13 +52,6 @@ body {
 
 .menu div:hover {
   color: white;
-}
-
-/* Currency */
-.currency {
-  background: #222733;
-  padding: 6px 12px;
-  border-radius: 8px;
 }
 
 /* Content */
@@ -89,7 +96,7 @@ body {
   font-weight: bold;
 }
 
-/* Marketplace Items */
+/* Marketplace */
 .market {
   margin-top: 30px;
   display: flex;
@@ -116,16 +123,18 @@ body {
 
 <!-- Top -->
 <div class="topbar">
-  <div class="logo">🚀 NovaPlay</div>
-
-  <div class="menu">
-    <div>Discover</div>
-    <div>Marketplace</div>
-    <div>Create</div>
-    <div>Charts</div>
+  
+  <div class="left">
+    <div class="logo">🚀 NovaPlay</div>
+    <div class="currency">⍟ 1,250 NovaCoins</div>
   </div>
 
-  <div class="currency">⍟ 1,250 NovaCoins</div>
+  <div class="menu">
+    <div>Charts</div>
+    <div>Marketplace</div>
+    <div>Create</div>
+  </div>
+
 </div>
 
 <!-- Content -->
