@@ -2,84 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>NovaPlay</title>
+<title>NovaPlay - Home</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0e1014;
   color: white;
 }
 
+/* TOP */
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background: #181b22;
   padding: 10px 20px;
-  height: 60px;
-  box-sizing: border-box;
-}
-
-/* LEFT */
-.left {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.logo {
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* MENU BUTTONS */
-.menu {
-  display: flex;
-  gap: 18px;
 }
 
 .menu a {
-  font-size: 19.5px; /* ~30% bigger */
-  font-weight: normal; /* unbold */
-  text-decoration: none;
+  font-size: 19px;
   color: #bbb;
-  padding: 6px 10px;
-  border-radius: 6px;
+  text-decoration: none;
+  margin-right: 15px;
 }
 
-.menu a:hover {
-  color: white;
-}
+.menu a:hover { color: white; }
 
-/* RIGHT */
-.balance {
-  background: #222733;
-  padding: 6px 12px;
-  border-radius: 8px;
-}
-
-/* CONTENT */
-.container {
-  padding: 20px;
-}
-
-.section-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
+/* CARDS */
 .games {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
+  padding: 20px;
 }
 
 .card {
   background: #1f2430;
   padding: 10px;
   border-radius: 12px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00d4ff55;
 }
 
 .thumb {
@@ -94,33 +62,25 @@ body {
 <body>
 
 <div class="topbar">
-  <div class="left">
-    <div class="logo" onclick="location.href='index.html'">🚀 NovaPlay</div>
-
-    <div class="menu">
-      <a href="index.html">Charts</a>
-      <a href="marketplace.html">Marketplace</a>
-      <a href="create.html">Create</a>
-      <a href="novacoins.html">NovaCoins</a>
-    </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="charts.html">Charts</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="create.html">Create</a>
   </div>
-
-  <div class="balance">⍟ 1,250</div>
 </div>
 
-<div class="container">
+<h2 style="padding:20px;">▶ Continue Playing</h2>
+<div class="games">
+  <div class="card"><div class="thumb"></div>Tower Rush</div>
+  <div class="card"><div class="thumb"></div>Sky Wars</div>
+</div>
 
-  <div class="section-title">🎮 All Games</div>
-
-  <div class="games">
-    <div class="card"><div class="thumb"></div>Tower Rush</div>
-    <div class="card"><div class="thumb"></div>Block Survival</div>
-    <div class="card"><div class="thumb"></div>Speed Run X</div>
-    <div class="card"><div class="thumb"></div>Sky Wars</div>
-    <div class="card"><div class="thumb"></div>More Game 1</div>
-    <div class="card"><div class="thumb"></div>More Game 2</div>
-  </div>
-
+<h2 style="padding:20px;">🔥 Popular Games</h2>
+<div class="games">
+  <div class="card"><div class="thumb"></div>Block Survival</div>
+  <div class="card"><div class="thumb"></div>Speed Run X</div>
+  <div class="card"><div class="thumb"></div>Neon City</div>
 </div>
 
 </body>
