@@ -21,18 +21,17 @@ body {
   padding: 10px 20px;
 }
 
-/* Left side */
+/* Left section */
 .left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Clickable logo */
+/* Logo */
 .logo {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 15px;
   cursor: pointer;
 }
 
@@ -40,16 +39,19 @@ body {
   color: #00d4ff;
 }
 
-/* Menu */
+/* Menu (TEXT ONLY STYLE) */
 .menu {
   display: flex;
-  gap: 20px;
+  gap: 18px;
+  align-items: center;
 }
 
 .menu div {
   cursor: pointer;
   color: #bbb;
   font-size: 14px;
+  background: none; /* important */
+  padding: 0;       /* important */
 }
 
 .menu div:hover {
@@ -58,19 +60,16 @@ body {
 
 /* NovaCoins button */
 .nc-btn {
-  background: #222733;
-  padding: 6px 12px;
-  border-radius: 8px;
-  cursor: pointer;
   color: #00d4ff;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .nc-btn:hover {
-  background: #2a3140;
+  color: #66e6ff;
 }
 
-/* Right side balance */
+/* Right balance */
 .balance {
   background: #222733;
   padding: 6px 12px;
@@ -88,7 +87,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Game Grid */
+/* Games */
 .games {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -145,9 +144,9 @@ body {
 
 <body>
 
-<!-- Top -->
+<!-- Top Bar -->
 <div class="topbar">
-  
+
   <div class="left">
     <div class="logo" onclick="goHome()">🚀 NovaPlay</div>
 
@@ -164,7 +163,7 @@ body {
 </div>
 
 <!-- Content -->
-<div class="container" id="mainPage">
+<div class="container">
 
   <div class="section-title">🔥 Popular Games</div>
   <div class="games">
@@ -198,21 +197,18 @@ body {
 </div>
 
 <script>
-// Game click
 document.querySelectorAll(".card").forEach(card => {
   card.onclick = () => {
     alert("Launching game...");
   };
 });
 
-// NovaCoins button
 document.querySelector(".nc-btn").onclick = () => {
   alert("Buy more NovaCoins!");
 };
 
-// Go back to main page
 function goHome() {
-  location.reload(); // simple reset to homepage
+  location.reload();
 }
 </script>
 
