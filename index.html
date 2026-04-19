@@ -3,119 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <title>NovaPlay</title>
+
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: white;
-    display: flex;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e1014;
+  color: white;
+}
 
-  /* Sidebar */
-  .sidebar {
-    width: 200px;
-    background: #1a1d24;
-    padding: 20px;
-    height: 100vh;
-  }
+/* Top Bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #181b22;
+  padding: 10px 20px;
+}
 
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-  .nav {
-    margin: 10px 0;
-    cursor: pointer;
-    color: #bbb;
-  }
+.menu {
+  display: flex;
+  gap: 20px;
+}
 
-  .nav:hover {
-    color: white;
-  }
+.menu div {
+  cursor: pointer;
+  color: #bbb;
+}
 
-  /* Main */
-  .main {
-    flex: 1;
-  }
+.menu div:hover {
+  color: white;
+}
 
-  .topbar {
-    background: #181b21;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
+/* Currency */
+.currency {
+  background: #222733;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
 
-  .profile {
-    background: #2a2f38;
-    padding: 5px 10px;
-    border-radius: 6px;
-  }
+/* Content */
+.container {
+  padding: 20px;
+}
 
-  .games {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-  }
+.section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-  .card {
-    background: #22262f;
-    padding: 10px;
-    border-radius: 12px;
-    transition: 0.2s;
-    cursor: pointer;
-  }
+/* Game Grid */
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #00bfff55;
-  }
+.card {
+  background: #1f2430;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-  .thumb {
-    height: 100px;
-    background: linear-gradient(45deg, #444, #666);
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00d4ff55;
+}
 
-  .title {
-    font-size: 14px;
-    font-weight: bold;
-  }
+.thumb {
+  height: 100px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #444, #777);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Marketplace Items */
+.market {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.item {
+  background: #1f2430;
+  padding: 10px;
+  border-radius: 10px;
+  width: 120px;
+  text-align: center;
+}
+
+.price {
+  color: #00d4ff;
+  margin-top: 5px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="sidebar">
+<!-- Top -->
+<div class="topbar">
   <div class="logo">🚀 NovaPlay</div>
-  <div class="nav">Home</div>
-  <div class="nav">Discover</div>
-  <div class="nav">Friends</div>
-  <div class="nav">Avatar</div>
+
+  <div class="menu">
+    <div>Discover</div>
+    <div>Marketplace</div>
+    <div>Create</div>
+    <div>Charts</div>
+  </div>
+
+  <div class="currency">⍟ 1,250 NovaCoins</div>
 </div>
 
-<div class="main">
-  <div class="topbar">
-    <div>Welcome back!</div>
-    <div class="profile">👤 Player123</div>
+<!-- Content -->
+<div class="container">
+
+  <div class="section-title">🔥 Popular Games</div>
+  <div class="games">
+    <div class="card"><div class="thumb"></div><div class="title">Tower Rush</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Block Survival</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Speed Run X</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Sky Wars</div></div>
   </div>
 
-  <div class="games">
-    <div class="card"><div class="thumb"></div><div class="title">Sky Jump</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Block City</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Speed Run</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Tower Rush</div></div>
+  <div class="section-title">🛒 Marketplace</div>
+  <div class="market">
+    <div class="item">
+      <div class="thumb"></div>
+      Cool Hat
+      <div class="price">⍟ 250</div>
+    </div>
+
+    <div class="item">
+      <div class="thumb"></div>
+      Epic Sword
+      <div class="price">⍟ 500</div>
+    </div>
+
+    <div class="item">
+      <div class="thumb"></div>
+      Neon Wings
+      <div class="price">⍟ 900</div>
+    </div>
   </div>
+
 </div>
 
 <script>
-  document.querySelectorAll(".card").forEach(card => {
-    card.onclick = () => alert("Launching game...");
-  });
+document.querySelectorAll(".card").forEach(card => {
+  card.onclick = () => {
+    alert("Launching game...");
+  };
+});
 </script>
 
 </body>
