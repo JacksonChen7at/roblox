@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Charts</title>
+
+<style>
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0e1014;
+  color:white;
+}
+
+.topbar {
+  background:#181b22;
+  padding:10px 20px;
+}
+
+.menu a {
+  color:#bbb;
+  text-decoration:none;
+  margin-right:15px;
+  font-size:19px;
+}
+
+.menu a:hover { color:white; }
+
+.games {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(180px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.card {
+  background:#1f2430;
+  padding:10px;
+  border-radius:12px;
+  transition:0.2s;
+  cursor:pointer;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00d4ff55;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="charts.html">Charts</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="create.html">Create</a>
+  </div>
+</div>
+
+<h2 style="padding:20px;">📊 All Games</h2>
+
+<div class="games">
+  <div class="card">Tower Rush</div>
+  <div class="card">Block Survival</div>
+  <div class="card">Speed Run X</div>
+  <div class="card">Sky Wars</div>
+
+  <!-- +10 MORE -->
+  <div class="card">Neon City</div>
+  <div class="card">Battle Zone</div>
+  <div class="card">Pixel Raid</div>
+  <div class="card">Zombie Core</div>
+  <div class="card">Cyber Drift</div>
+  <div class="card">Island Life</div>
+  <div class="card">Space Mining</div>
+  <div class="card">Robotics X</div>
+  <div class="card">Dungeon Run</div>
+  <div class="card">Mega Tycoon</div>
+</div>
+
+</body>
+</html>
