@@ -2,29 +2,51 @@
 <html>
 <head>
 <title>Marketplace</title>
+
 <style>
-body { margin:0; font-family:Arial; background:#0e1014; color:white; }
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0e1014;
+  color:white;
+}
 
 .topbar {
-  display:flex; justify-content:space-between; padding:10px 20px;
   background:#181b22;
+  padding:10px 20px;
 }
 
 .menu a {
-  font-size:19.5px;
-  margin-right:15px;
   color:#bbb;
   text-decoration:none;
+  margin-right:15px;
+  font-size:19px;
 }
 
 .menu a:hover { color:white; }
 
+.items {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(140px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
 .item {
   background:#1f2430;
   padding:10px;
-  margin:10px;
-  display:inline-block;
   border-radius:10px;
+  transition:0.2s;
+  cursor:pointer;
+}
+
+.item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px #00d4ff55;
+}
+
+.price {
+  color:#00d4ff;
 }
 </style>
 </head>
@@ -33,18 +55,41 @@ body { margin:0; font-family:Arial; background:#0e1014; color:white; }
 
 <div class="topbar">
   <div class="menu">
-    <a href="index.html">Charts</a>
+    <a href="index.html">Home</a>
+    <a href="charts.html">Charts</a>
     <a href="marketplace.html">Marketplace</a>
     <a href="create.html">Create</a>
-    <a href="novacoins.html">NovaCoins</a>
   </div>
 </div>
 
-<h2 style="padding:20px;">🧑 Avatars</h2>
+<h2 style="padding:20px;">🛒 Marketplace Items</h2>
 
-<div class="item">Cool Avatar</div>
-<div class="item">Warrior Avatar</div>
-<div class="item">Cyber Avatar</div>
+<div class="items">
+
+  <!-- original + expanded -->
+  <div class="item">Cool Hat <div class="price">⍟ 250</div></div>
+  <div class="item">Epic Sword <div class="price">⍟ 500</div></div>
+  <div class="item">Neon Wings <div class="price">⍟ 900</div></div>
+  <div class="item">Dark Cape <div class="price">⍟ 300</div></div>
+  <div class="item">Fire Aura <div class="price">⍟ 450</div></div>
+  <div class="item">Ice Crown <div class="price">⍟ 700</div></div>
+  <div class="item">Dragon Blade <div class="price">⍟ 1200</div></div>
+  <div class="item">Speed Boots <div class="price">⍟ 350</div></div>
+  <div class="item">Shadow Wings <div class="price">⍟ 850</div></div>
+  <div class="item">Golden Mask <div class="price">⍟ 650</div></div>
+
+  <div class="item">Void Armor <div class="price">⍟ 1500</div></div>
+  <div class="item">Plasma Gun <div class="price">⍟ 1100</div></div>
+  <div class="item">Crystal Staff <div class="price">⍟ 980</div></div>
+  <div class="item">Storm Cape <div class="price">⍟ 720</div></div>
+  <div class="item">Galaxy Hat <div class="price">⍟ 400</div></div>
+  <div class="item">Blade Wings <div class="price">⍟ 999</div></div>
+  <div class="item">Lava Sword <div class="price">⍟ 1300</div></div>
+  <div class="item">Angel Wings <div class="price">⍟ 600</div></div>
+  <div class="item">Shadow Helm <div class="price">⍟ 550</div></div>
+  <div class="item">Thunder Aura <div class="price">⍟ 800</div></div>
+
+</div>
 
 </body>
 </html>
