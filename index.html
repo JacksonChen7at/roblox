@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NovaPlay</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f1115;
+    color: white;
+    display: flex;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 200px;
+    background: #1a1d24;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .nav {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #bbb;
+  }
+
+  .nav:hover {
+    color: white;
+  }
+
+  /* Main */
+  .main {
+    flex: 1;
+  }
+
+  .topbar {
+    background: #181b21;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profile {
+    background: #2a2f38;
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+
+  .games {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #22262f;
+    padding: 10px;
+    border-radius: 12px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bfff55;
+  }
+
+  .thumb {
+    height: 100px;
+    background: linear-gradient(45deg, #444, #666);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="logo">🚀 NovaPlay</div>
+  <div class="nav">Home</div>
+  <div class="nav">Discover</div>
+  <div class="nav">Friends</div>
+  <div class="nav">Avatar</div>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <div>Welcome back!</div>
+    <div class="profile">👤 Player123</div>
+  </div>
+
+  <div class="games">
+    <div class="card"><div class="thumb"></div><div class="title">Sky Jump</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Block City</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Speed Run</div></div>
+    <div class="card"><div class="thumb"></div><div class="title">Tower Rush</div></div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".card").forEach(card => {
+    card.onclick = () => alert("Launching game...");
+  });
+</script>
+
+</body>
+</html>
