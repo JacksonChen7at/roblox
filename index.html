@@ -12,7 +12,6 @@ body {
   color: white;
 }
 
-/* TOP BAR */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -23,61 +22,42 @@ body {
   box-sizing: border-box;
 }
 
-/* LEFT SIDE (logo + menu together) */
+/* LEFT */
 .left {
   display: flex;
-  align-items: center; /* vertical center */
+  align-items: center;
   gap: 25px;
 }
 
-/* LOGO (vertically centered, NOT centered on page) */
 .logo {
   font-size: 20px;
-  font-weight: bold;
   cursor: pointer;
-  display: flex;
-  align-items: center;
 }
 
-.logo:hover {
-  color: #00d4ff;
-}
-
-/* MENU */
+/* MENU BUTTONS */
 .menu {
   display: flex;
-  gap: 22px;
-  align-items: center;
+  gap: 18px;
 }
 
-.menu div {
-  font-size: 15px;
-  cursor: pointer;
+.menu a {
+  font-size: 19.5px; /* ~30% bigger */
+  font-weight: normal; /* unbold */
+  text-decoration: none;
   color: #bbb;
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
-.menu div:hover {
+.menu a:hover {
   color: white;
 }
 
-/* NC BUTTON (NovaCoins) */
-.nc-btn {
-  font-size: 15px;
-  cursor: pointer;
-  color: #00d4ff;
-  font-weight: bold;
-}
-
-.nc-btn:hover {
-  color: #66e6ff;
-}
-
-/* RIGHT BALANCE */
+/* RIGHT */
 .balance {
   background: #222733;
   padding: 6px 12px;
   border-radius: 8px;
-  font-weight: bold;
 }
 
 /* CONTENT */
@@ -90,7 +70,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* GAME GRID */
 .games {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -99,121 +78,50 @@ body {
 
 .card {
   background: #1f2430;
-  border-radius: 12px;
   padding: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #00d4ff55;
+  border-radius: 12px;
 }
 
 .thumb {
   height: 100px;
+  background: #444;
   border-radius: 8px;
-  background: linear-gradient(45deg, #444, #777);
   margin-bottom: 10px;
 }
-
-.title {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* MARKET */
-.market {
-  margin-top: 30px;
-  display: flex;
-  gap: 15px;
-}
-
-.item {
-  background: #1f2430;
-  padding: 10px;
-  border-radius: 10px;
-  width: 120px;
-  text-align: center;
-}
-
-.price {
-  color: #00d4ff;
-  margin-top: 5px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-
-  <!-- LEFT GROUP -->
   <div class="left">
-
-    <div class="logo" onclick="goHome()">🚀 NovaPlay</div>
+    <div class="logo" onclick="location.href='index.html'">🚀 NovaPlay</div>
 
     <div class="menu">
-      <div>Charts</div>
-      <div>Marketplace</div>
-      <div>Create</div>
-      <div class="nc-btn">NovaCoins</div>
+      <a href="index.html">Charts</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="create.html">Create</a>
+      <a href="novacoins.html">NovaCoins</a>
     </div>
-
   </div>
 
-  <!-- RIGHT -->
   <div class="balance">⍟ 1,250</div>
-
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <div class="section-title">🔥 Popular Games</div>
+  <div class="section-title">🎮 All Games</div>
 
   <div class="games">
-    <div class="card"><div class="thumb"></div><div class="title">Tower Rush</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Block Survival</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Speed Run X</div></div>
-    <div class="card"><div class="thumb"></div><div class="title">Sky Wars</div></div>
-  </div>
-
-  <div class="section-title">🛒 Marketplace</div>
-
-  <div class="market">
-    <div class="item">
-      <div class="thumb"></div>
-      Cool Hat
-      <div class="price">⍟ 250</div>
-    </div>
-
-    <div class="item">
-      <div class="thumb"></div>
-      Epic Sword
-      <div class="price">⍟ 500</div>
-    </div>
-
-    <div class="item">
-      <div class="thumb"></div>
-      Neon Wings
-      <div class="price">⍟ 900</div>
-    </div>
+    <div class="card"><div class="thumb"></div>Tower Rush</div>
+    <div class="card"><div class="thumb"></div>Block Survival</div>
+    <div class="card"><div class="thumb"></div>Speed Run X</div>
+    <div class="card"><div class="thumb"></div>Sky Wars</div>
+    <div class="card"><div class="thumb"></div>More Game 1</div>
+    <div class="card"><div class="thumb"></div>More Game 2</div>
   </div>
 
 </div>
-
-<script>
-document.querySelectorAll(".card").forEach(card => {
-  card.onclick = () => alert("Launching game...");
-});
-
-function goHome() {
-  location.reload();
-}
-</script>
 
 </body>
 </html>
