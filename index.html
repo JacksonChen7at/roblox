@@ -2,226 +2,210 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>NovePlay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox UI Clone</title>
+
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0f0f0f;
+    background: #0f1116;
     color: white;
 }
 
-/* NAVBAR */
-.navbar {
-    height: 60px;
-    background: #1a1a1a;
+/* Top Bar */
+.topbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
+    padding: 10px 20px;
+    background: #111318;
+    border-bottom: 1px solid #222;
 }
 
-/* LEFT MENU */
-.left-menu {
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.top-links {
     display: flex;
     gap: 20px;
-    align-items: center;
+    color: #ccc;
 }
 
-.menu-item {
-    font-size: 18px; /* ~30% bigger */
-    font-weight: normal;
-    cursor: pointer;
-    transition: 0.2s;
+.search {
+    margin-left: auto;
+    padding: 6px 10px;
+    background: #1c1f26;
+    border-radius: 6px;
+    border: none;
+    color: white;
 }
 
-.menu-item:hover {
-    transform: scale(1.15);
-    text-shadow: 0 0 10px white;
+/* Layout */
+.container {
+    display: flex;
 }
 
-/* CENTER BUTTON */
-.center-btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    padding: 6px 14px;
-    background: #333;
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #0c0e13;
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
+    color: #ccc;
 }
 
-.center-btn:hover {
-    transform: translateX(-50%) scale(1.1);
-    box-shadow: 0 0 10px white;
+.nav-item:hover, .nav-item.active {
+    background: #1c1f26;
+    color: white;
 }
 
-/* RIGHT */
-.right {
-    font-size: 18px;
+/* Main Content */
+.main {
+    flex: 1;
+    padding: 20px;
 }
 
-/* PAGES */
-.page {
-    display: none;
-    padding: 80px 20px 20px 20px;
+/* Friends Row */
+.friends {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    margin-bottom: 30px;
 }
 
-.active {
-    display: block;
-}
-
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-}
-
-.card {
-    background: #222;
-    padding: 10px;
-    border-radius: 10px;
+.friend {
     text-align: center;
 }
 
-/* Marketplace items */
-.market-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.friend img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
-.item {
-    background: #2a2a2a;
-    padding: 10px;
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1c1f26;
     border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 10px;
+}
+
+.subtitle {
+    color: #aaa;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="left-menu">
-        <div class="menu-item" onclick="showPage('charts')">Charts</div>
-        <div class="menu-item" onclick="showPage('market')">Marketplace</div>
-        <div class="menu-item" onclick="showPage('create')">Create</div>
-        <div class="menu-item" onclick="showPage('coins')">NoveCoins</div>
+<div class="topbar">
+    <div class="logo">ROBLOX</div>
+    <div class="top-links">
+        <div>Charts</div>
+        <div>Marketplace</div>
+        <div>Create</div>
+        <div>Robux</div>
     </div>
-
-    <div class="center-btn" onclick="showPage('main')">NovePlay</div>
-
-    <div class="right">
-        💰 1250 NC
-    </div>
+    <input class="search" placeholder="Search">
 </div>
 
-<!-- MAIN PAGE -->
-<div id="main" class="page active">
-    <h2>Popular Games</h2>
-    <div class="game-grid">
-        <div class="card">Obby Run</div>
-        <div class="card">Sword Fight</div>
-        <div class="card">Tycoon World</div>
-        <div class="card">City RP</div>
-        <div class="card">Anime Battlers</div>
+<div class="container">
+
+    <div class="sidebar">
+        <h3>AssaultRifleBwai</h3>
+        <div class="nav-item active">Home</div>
+        <div class="nav-item">Profile</div>
+        <div class="nav-item">Messages</div>
+        <div class="nav-item">Friends</div>
+        <div class="nav-item">Avatar</div>
+        <div class="nav-item">Inventory</div>
+        <div class="nav-item">Trade</div>
     </div>
 
-    <h2>Continue Playing</h2>
-    <div class="game-grid">
-        <div class="card">Your Last Game</div>
-        <div class="card">Match 2</div>
-    </div>
-</div>
+    <div class="main">
+        <h1>Home</h1>
 
-<!-- CHARTS PAGE -->
-<div id="charts" class="page">
-    <h2>All Games (Charts)</h2>
-    <div class="game-grid">
-        <div class="card">Obby Run</div>
-        <div class="card">Sword Fight</div>
-        <div class="card">Tycoon World</div>
-        <div class="card">City RP</div>
-        <div class="card">Anime Battlers</div>
-        <div class="card">Zombie Rush</div>
-        <div class="card">Space Wars</div>
-        <div class="card">Racing X</div>
-        <div class="card">Pet Simulator</div>
-        <div class="card">Build Battle</div>
+        <h3>Friends</h3>
+        <div class="friends" id="friends"></div>
 
-        <!-- +10 extra games -->
-        <div class="card">Dragon Quest</div>
-        <div class="card">Island Survival</div>
-        <div class="card">Parkour Pro</div>
-        <div class="card">Gun Arena</div>
-        <div class="card">Magic School</div>
-        <div class="card">Street Fight</div>
-        <div class="card">Fishing Sim</div>
-        <div class="card">Car Dealer RP</div>
-        <div class="card">Horror Escape</div>
-        <div class="card">Sky Block</div>
-    </div>
-</div>
-
-<!-- MARKETPLACE -->
-<div id="market" class="page">
-    <h2>Marketplace (Avatars & Items)</h2>
-
-    <h3>Avatars</h3>
-    <div class="market-grid">
-        <div class="item">Starter Avatar</div>
-        <div class="item">Pro Gamer</div>
-        <div class="item">Cyber Ninja</div>
-        <div class="item">Royal King</div>
+        <h3>Standout Games</h3>
+        <div class="cards" id="games"></div>
     </div>
 
-    <h3>Items</h3>
-    <div class="market-grid">
-        <div class="item">Dragon Wings</div>
-        <div class="item">Angel Wings</div>
-        <div class="item">Fire Sword</div>
-        <div class="item">Ice Blade</div>
-        <div class="item">Golden Cape</div>
-        <div class="item">Shadow Armor</div>
-        <div class="item">Jetpack</div>
-        <div class="item">Laser Gun</div>
-        <div class="item">Neon Hat</div>
-        <div class="item">Robotic Arms</div>
-        <div class="item">Magic Staff</div>
-        <div class="item">Skull Mask</div>
-        <div class="item">Speed Boots</div>
-        <div class="item">VIP Crown</div>
-        <div class="item">Galaxy Backpack</div>
-        <div class="item">Thunder Hammer</div>
-        <div class="item">Dark Cloak</div>
-        <div class="item">Light Wings</div>
-        <div class="item">Crystal Shield</div>
-        <div class="item">Inferno Blade</div>
-    </div>
-</div>
-
-<!-- CREATE -->
-<div id="create" class="page">
-    <h2>CREATE</h2>
-    <p>IN CONSTRUCTION</p>
-</div>
-
-<!-- COINS -->
-<div id="coins" class="page">
-    <h2>NoveCoins</h2>
-    <p>IN CONSTRUCTION</p>
 </div>
 
 <script>
-function showPage(page) {
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-    document.getElementById(page).classList.add("active");
-}
+// Fake data
+const friends = [
+    "https://i.pravatar.cc/100?img=1",
+    "https://i.pravatar.cc/100?img=2",
+    "https://i.pravatar.cc/100?img=3",
+    "https://i.pravatar.cc/100?img=4",
+    "https://i.pravatar.cc/100?img=5"
+];
+
+const games = [
+    {title:"The Block", desc:"Events, concerts and more!", img:"https://picsum.photos/400/200?1"},
+    {title:"Dress To Impress", desc:"Become the top model", img:"https://picsum.photos/400/200?2"},
+    {title:"KPop Demon Hunters", desc:"Protect the fans", img:"https://picsum.photos/400/200?3"},
+    {title:"Winx", desc:"Step into the magic", img:"https://picsum.photos/400/200?4"}
+];
+
+// Render Friends
+const friendContainer = document.getElementById("friends");
+friends.forEach(src => {
+    const div = document.createElement("div");
+    div.className = "friend";
+    div.innerHTML = `<img src="${src}"><div>Friend</div>`;
+    friendContainer.appendChild(div);
+});
+
+// Render Games
+const gameContainer = document.getElementById("games");
+games.forEach(game => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+        <img src="${game.img}">
+        <div class="info">
+            <strong>${game.title}</strong>
+            <div class="subtitle">${game.desc}</div>
+        </div>
+    `;
+    gameContainer.appendChild(div);
+});
 </script>
 
 </body>
